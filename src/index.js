@@ -29,7 +29,7 @@ const gltfLoader2 = new GLTFLoader()
       scene.add(root);
       mixer = new THREE.AnimationMixer(root);
 
-      action = mixer.clipAction( anim[ 0 ] )
+      action = mixer.clipAction( anim[ 0 ])
       //action.play();
 
      
