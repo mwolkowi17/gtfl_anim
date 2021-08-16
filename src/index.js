@@ -35,19 +35,28 @@ const gltfLoader2 = new GLTFLoader()
 
      
     })
-
+let ifPlayed=false;
 let actionbutton = document.getElementById("start_button")
 actionbutton.addEventListener("click",function(){
-  mixer.setTime(0);
+  if(ifPlayed===false){
+    mixer.setTime(0);
+  }
+  
+  /*if(ifPlayed===true){
+    mixer.setTime(a);
+  }*/
   mixer.timeScale=1
   
  action.play();
  
 },false)
+let a;
 
 let stopbutton = document.getElementById("stop_button")
 stopbutton.addEventListener("click", function(){
   mixer.timeScale=0
+  a=mixer.time;
+  ifPlayed=true;
  //action.stop();
 }, false)
 
