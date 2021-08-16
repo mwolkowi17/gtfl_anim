@@ -28,8 +28,9 @@ const gltfLoader2 = new GLTFLoader()
       const anim = gltf.animations;
       scene.add(root);
       mixer = new THREE.AnimationMixer(root);
-
+      
       action = mixer.clipAction( anim[ 0 ])
+     
       //action.play();
 
      
@@ -37,8 +38,11 @@ const gltfLoader2 = new GLTFLoader()
 
 let actionbutton = document.getElementById("start_button")
 actionbutton.addEventListener("click",function(){
+  mixer.setTime(0);
   mixer.timeScale=1
+  
  action.play();
+ 
 },false)
 
 let stopbutton = document.getElementById("stop_button")
@@ -78,6 +82,10 @@ const animate = function () {
   
     controls.update();
     if (mixer ) mixer.update( delta );
+    if (mixer.time>5){
+      //console.log("time");
+      mixer.timeScale=0
+     }
 
 };
 
