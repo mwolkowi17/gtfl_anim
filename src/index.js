@@ -37,12 +37,14 @@ const gltfLoader2 = new GLTFLoader()
 
 let actionbutton = document.getElementById("start_button")
 actionbutton.addEventListener("click",function(){
+  mixer.timeScale=1
  action.play();
 },false)
 
 let stopbutton = document.getElementById("stop_button")
 stopbutton.addEventListener("click", function(){
- action.stop();
+  mixer.timeScale=0
+ //action.stop();
 }, false)
 
 const gltfLoader3 = new GLTFLoader()
