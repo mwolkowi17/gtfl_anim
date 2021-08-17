@@ -52,12 +52,22 @@ actionbutton.addEventListener("click",function(){
 },false)
 let a;
 
-let stopbutton = document.getElementById("stop_button")
+let stopbutton = document.getElementById("stop_button");
 stopbutton.addEventListener("click", function(){
   mixer.timeScale=0
   a=mixer.time;
   ifPlayed=true;
  //action.stop();
+}, false)
+
+let resetbutton = document.getElementById("reset_button");
+resetbutton.addEventListener("click", function(){
+  ifPlayed=false;
+  if(ifPlayed===false){
+    mixer.setTime(0);
+  };
+  mixer.timeScale=1;
+  mixer.timeScale=0;
 }, false)
 
 const gltfLoader3 = new GLTFLoader()
