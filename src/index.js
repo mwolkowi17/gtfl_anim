@@ -70,11 +70,6 @@ resetbutton.addEventListener("click", function(){
   mixer.timeScale=0;
 }, false)
 
-const gltfLoader3 = new GLTFLoader()
-    gltfLoader3.load('./zawor_kulowy_three2.glb', (gltf) => {
-      const root = gltf.scene;
-      //scene.add(root);
-    })  
 
     
 camera.position.z = 8;
