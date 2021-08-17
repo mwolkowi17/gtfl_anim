@@ -11,7 +11,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.shadowMap.enabled = true;
 document.body.appendChild(renderer.domElement);
 
-scene.background = new THREE.Color( 0xE8E8E8 );
+scene.background = new THREE.Color( 0xFFFFFF );
 
 scene.add(light2);
 scene.add(light2.target);
