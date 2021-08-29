@@ -1,5 +1,6 @@
 import { GLTFLoader } from '../node_modules/three/examples/jsm/loaders/GLTFLoader';
 import * as THREE from 'three';
+import { scene } from './index.js';
 
 export let mixer= new THREE.AnimationMixer();
 export let action;

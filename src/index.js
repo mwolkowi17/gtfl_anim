@@ -2,8 +2,9 @@ import { GLTFLoader } from '../node_modules/three/examples/jsm/loaders/GLTFLoade
 import * as THREE from 'three';
 import * as OrbitControls from 'three-orbitcontrols';
 import { light2, light3, light4 } from './direct_light.js';
+import { mixer, action, gltfLoader2 } from './loader';
 
-const scene = new THREE.Scene();
+export const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
 const renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -20,21 +21,6 @@ scene.add(light3.target);
 scene.add(light4);
 scene.add(light4.target);
 
-let mixer= new THREE.AnimationMixer();
-let action;
-const gltfLoader2 = new GLTFLoader()
-    gltfLoader2.load('./zawor_kulowy_three2.glb', (gltf) => {
-      const root = gltf.scene;
-      const anim = gltf.animations;
-      scene.add(root);
-      mixer = new THREE.AnimationMixer(root);
-      
-      action = mixer.clipAction( anim[ 0 ])
-     
-      //action.play();
-
-     
-    })
 let ifPlayed=false;
 let actionbutton = document.getElementById("start_button")
 actionbutton.addEventListener("click",function(){
